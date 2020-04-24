@@ -8,10 +8,10 @@ import Banner from '../components/Banner';
 
 const slidesItem = [
     { title: 'WELCOME TO STARHOTEL, LIVE YOUR MYTH', subTitle: 'Modern Rooms & Spacious Suites', image: roomone },
-    { title: 'A Five Star Hotel 2', subTitle: 'Break The UI Into A Component Hierarchy', image: roomtwo },
-    { title: 'A Five Star Hotel 3', subTitle: 'Break The UI Into A Component Hierarchy', image: roomthree },
-    { title: 'A Five Star Hotel 4', subTitle: 'Break The UI Into A Component Hierarchy', image: roomfour },
-    { title: 'A Five Star Hotel 5', subTitle: 'Break The UI Into A Component Hierarchy', image: roomfive }
+    { title: 'SUPER LUXURY HOTELS', subTitle: 'I rarely stay in hotels because I have friends all over the world.', image: roomtwo },
+    { title: 'THERE IS A LUXURYAND AND FANTASY', subTitle: 'Hotel life is about the same in every latitude.', image: roomthree },
+    { title: 'IT IS A REFUGE FROM HOME LIFE', subTitle: 'No matter how nice a hotel is, its not home.', image: roomfour },
+    { title: 'THE LONELIEST PLACE TO BE IS A HOTEL ROOM', subTitle: 'The new type of heaven is being offered to humans', image: roomfive }
 ];
 
 function Slides() {
