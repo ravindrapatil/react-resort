@@ -5,10 +5,10 @@ import Room from '../components/Room';
 function RoomList({rooms}) {
     // console.log("RoomList Data " + rooms);
     
-    const template = <Grid container spacing={3}>
+    const template = <Grid container spacing={5} className="mb-30">
     {
         rooms.map((room, index) => {
-            return <Grid key={room.id} item lg={3} xs={12} sm={4} md={3}>
+            return <Grid key={room.id} item lg={4} xs={12} sm={4} md={4}>
                 <Room room={room} />
             </Grid>
         })

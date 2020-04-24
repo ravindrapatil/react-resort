@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
+import CheckIcon from '@material-ui/icons/Check';
 
 import { RoomContext } from '../context';
 import defaultBg from '../images/room-1.jpeg';
@@ -15,7 +16,7 @@ function SingleRoom(props) {
         defaultBg,
         slug: props.match.params.slug
     }
-    const [state, setstate] = useState(initialState);
+    const [state] = useState(initialState);
     const { getRoom } = usersContext;
     const room = getRoom(state.slug);
     const { name, description, capacity, size, price, extras, breakfast, pets, images } = room;
@@ -30,7 +31,7 @@ function SingleRoom(props) {
         <Link to="/rooms" className="btn-primary">back to rooms</Link>
     </div>
 
-    const template = <div>
+    const template = <div className="mb-30">
         <Heros hero="roomsHero" customBg={dynamicImg}>
             <Banner title={`${name} room`}>
                 <Link to={`/rooms`} className="btn-primary">back to rooms</Link>
@@ -67,7 +68,7 @@ function SingleRoom(props) {
                         {
                             extras.map((item, index) => {
                                 return <Grid item key={index} lg={4} xs={12} sm={4} md={4} style={{fontSize: '14px'}}>
-                                    - {item}
+                                    <CheckIcon style={{color: '#82B73A'}} /> &nbsp; <span>{item}</span>
                                 </Grid>
                             })
                         }

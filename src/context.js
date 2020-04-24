@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import items from './data';
+// import items from './data';
 import Client from './Contentful';
 
 // Client.getEntries({
@@ -133,27 +133,8 @@ export const RoomProvider = (props) => {
         }
     }
 
-    const reset = () => {
-        // let { rooms } = state;
-        let rooms = formatData(items);
-        let featuredRooms = rooms.filter(room => room.featured === true);
-        let maxPrice = Math.max(...rooms.map(item => item.price));
-        let maxSize = Math.max(...rooms.map(item => item.size));
-        setState({
-            ...state,
-            rooms,
-            featuredRooms,
-            sortedRooms: rooms,
-            loading: false,
-            maxPrice,
-            maxSize
-        });
-    }
-
-
-
     return (
-        <RoomContext.Provider value={{ ...state, getRoom: getRoom, handleChange: handleChange, handlePriceChange: handlePriceChange, reset: reset }}>
+        <RoomContext.Provider value={{ ...state, getRoom: getRoom, handleChange: handleChange, handlePriceChange: handlePriceChange }}>
             {props.children}
         </RoomContext.Provider>
     )

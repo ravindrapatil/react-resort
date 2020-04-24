@@ -32,9 +32,9 @@ const getUnique = (items, value) => {
 function RoomFilter({ rooms }) {
     const classes = useStyles();
     const usersContext = useContext(RoomContext);
-    const { type, capacity, price, minPrice, maxPrice, minSize, maxSize, breakfast, pets, handleChange, handlePriceChange, reset } = usersContext;
+    const { type, capacity, price, minSize, maxSize, breakfast, pets, handleChange, handlePriceChange } = usersContext;
 
-    console.log(`${type}, ${capacity}, ${price}, ${minPrice}, ${maxPrice}, ${minSize}, ${maxSize}, ${breakfast}, ${pets}`);
+    // console.log(`${type}, ${capacity}, ${price}, ${minPrice}, ${maxPrice}, ${minSize}, ${maxSize}, ${breakfast}, ${pets}`);
 
     // get Unique types
     let types = getUnique(rooms, 'type');
@@ -52,10 +52,6 @@ function RoomFilter({ rooms }) {
     })
 
     // let price = Math.max(...rooms.map(item => item.price));
-
-    // const reset = () => {
-    //     console.log('clicked...');
-    // }
 
     return (
         <>

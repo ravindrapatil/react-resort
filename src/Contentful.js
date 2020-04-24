@@ -6,3 +6,7 @@ export default createClient({
 })
 
 // .env.development file same location as package.json file.
+
+// react-router-dom not play well/good with contentful. (Google search with => react-router-dom an netlify)
+// Fix is very simple - create a file called '_redirects' in the public folder and add this => /*    /index.html   200
+// https://www.youtube.com/watch?v=ScDWrogElmo&t=17745s

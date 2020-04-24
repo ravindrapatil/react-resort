@@ -8,6 +8,7 @@ import SingleRoom from './pages/SingleRoom';
 import Error from './pages/Error';
 import NavBar from './components/NavBar';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
         <Route exact path='/rooms/:slug' component={SingleRoom}></Route>
         <Route component={Error}></Route>
       </Switch>
+      <ScrollToTop />
       <Footer />
+      
     </>
   );
 }

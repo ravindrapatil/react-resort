@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme) => ({
     },
     linkSpacing: {
         marginLeft: theme.spacing(3),
-        color: '#fff',
+        color: '#5e5e5e',
         textDecoration: 'none'
     },
     buttonBar: {

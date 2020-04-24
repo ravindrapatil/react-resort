@@ -6,7 +6,7 @@ import { RoomContext } from '../context';
 
 function RoomsContainer() {
     const roomsContext = useContext(RoomContext);
-    console.log(roomsContext);
+    // console.log(roomsContext);
     const { rooms, sortedRooms, loading } = roomsContext;
 
     const template = <><RoomFilter rooms={rooms} /><RoomList rooms={sortedRooms} /></>
