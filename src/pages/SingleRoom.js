@@ -9,6 +9,7 @@ import { RoomContext } from '../context';
 import defaultBg from '../images/room-1.jpeg';
 import Heros from '../components/Heros';
 import Banner from '../components/Banner';
+import MultiCarousel from '../components/MultiCarousel';
 
 function SingleRoom(props) {
     const usersContext = useContext(RoomContext);
@@ -38,7 +39,8 @@ function SingleRoom(props) {
             </Banner>
         </Heros>
         <Container style={{ marginTop: '40px' }}>
-            <Grid container spacing={5}>
+            <MultiCarousel images={defaultImgs} />
+            {/* <Grid container spacing={5}>
                 {
                     defaultImgs.map((item, index) => {
                         return <Grid key={index} item lg={4} xs={12} sm={4} md={4}>
@@ -46,8 +48,8 @@ function SingleRoom(props) {
                         </Grid>
                     })
                 }
-            </Grid>
-            <Grid container spacing={5}>
+            </Grid> */}
+            <Grid container spacing={5} style={{ marginTop: '10px' }}>
                 <Grid item lg={8} xs={12} sm={8} md={8}>
                     <Typography variant="h4" gutterBottom>Details</Typography>
                     <Typography variant="body2" gutterBottom>{description}</Typography>
