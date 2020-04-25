@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createRef } from 'react';
 // import items from './data';
 import Client from './Contentful';
 
@@ -27,6 +27,8 @@ export const RoomProvider = (props) => {
         pets: false
     }
     const [state, setState] = useState(initialState);
+
+    const featureSectionRef = createRef();
 
     const getData = async () => {
         try {
@@ -133,8 +135,21 @@ export const RoomProvider = (props) => {
         }
     }
 
+    const handleGoToSection = (event) => {
+        if(featureSectionRef.current) {
+            featureSectionRef.current.scrollIntoView({
+                behavior: "smooth", 
+                block: "nearest"
+            })
+        }
+    }
+
     return (
-        <RoomContext.Provider value={{ ...state, getRoom: getRoom, handleChange: handleChange, handlePriceChange: handlePriceChange }}>
+        <RoomContext.Provider value={{ ...state, getRoom: getRoom, 
+            handleChange: handleChange,
+            featureSectionRef: featureSectionRef, 
+            handlePriceChange: handlePriceChange,
+            handleGoToSection: handleGoToSection }}>
             {props.children}
         </RoomContext.Provider>
     )

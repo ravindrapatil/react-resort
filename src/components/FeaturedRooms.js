@@ -9,7 +9,7 @@ import { RoomContext } from '../context';
 
 function FeaturedRooms() {
     const usersContext = useContext(RoomContext);
-    let { featuredRooms, loading } = usersContext;
+    let { featuredRooms, loading, featureSectionRef } = usersContext;
 
     const rooms = <><Grid container spacing={3}>
         {
@@ -26,10 +26,10 @@ function FeaturedRooms() {
     </>
 
     return (
-        <>
+        <div ref={featureSectionRef}>
             <Title title="Features" />
             {loading ? <Loading /> : rooms}
-        </>
+        </div>
     )
 }
 

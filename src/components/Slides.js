@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import roomone from '../images/room-10.jpeg';
 import roomtwo from '../images/room-9.jpeg';
 import roomthree from '../images/room-5.jpeg';
 import roomfour from '../images/slide-bg.jpg';
 import roomfive from '../images/slide-bg-02.jpg';
 import Banner from '../components/Banner';
+import IconButton from '@material-ui/core/IconButton';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+
+import { RoomContext } from '../context';
 
 const slidesItem = [
     { title: 'WELCOME TO STARHOTEL, LIVE YOUR MYTH', subTitle: 'Modern Rooms & Spacious Suites', image: roomone },
@@ -15,6 +19,9 @@ const slidesItem = [
 ];
 
 function Slides() {
+    const usersContext = useContext(RoomContext);
+    const { handleGoToSection } = usersContext;
+
     const [curr, setCurr] = useState(0);
     const slidesLength = slidesItem.length;
 
@@ -34,20 +41,27 @@ function Slides() {
     }
 
     return (
-        <section className="slider">
-            {
-                slidesItem.map((slide, index) => {
-                    return <div key={index} className={index === curr ? 'slide active' : 'slide'}>
-                        <Banner title={slide.title} subtitle={slide.subTitle} />
-                        {
-                            index === curr && (
-                                <img className="image" src={slide.image} alt={slide.title} />
-                            )
-                        }
-                    </div>
-                })
-            }
-        </section>
+        <>
+            <section className="slider">
+                {
+                    slidesItem.map((slide, index) => {
+                        return <div key={index} className={index === curr ? 'slide active' : 'slide'}>
+                            <Banner title={slide.title} subtitle={slide.subTitle} />
+                            {
+                                index === curr && (
+                                    <img className="image" src={slide.image} alt={slide.title} />
+                                )
+                            }
+                        </div>
+                    })
+                }
+                <div className="moveTo">
+                    <IconButton onClick={handleGoToSection} color="primary" aria-label="Move To Section" component="span">
+                        <ArrowDownwardIcon />
+                    </IconButton>
+                </div>
+            </section>
+        </>
     )
 }
 

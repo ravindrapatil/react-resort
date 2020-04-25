@@ -137,7 +137,6 @@
 
 /* Services */
 
-
 .serviceContent {
   border-top: 1px solid #f5f5f5;
   background-color: #f9f9f9;
@@ -354,8 +353,8 @@
   background: #ffb600;
   padding: 0.4rem;
   border-radius: 4px;
-  -webkit-transition: .5s;
-  transition: .5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
   z-index: 9;
   color: #fff;
 }
@@ -375,10 +374,12 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: .3s ease;
+  transition: 0.3s ease;
 }
 
-.slide h1, .slide h2, .banner h1 {
+.slide h1,
+.slide h2,
+.banner h1 {
   color: #222;
   text-shadow: 2px 2px 1px #8acedc;
 }
@@ -390,7 +391,7 @@
 
 .slide.active {
   opacity: 1;
-  transition-duration: .2s;
+  transition-duration: 0.2s;
 }
 
 .image {
@@ -403,6 +404,21 @@
   z-index: -1;
 }
 
+.moveTo {
+  position: absolute;
+  bottom: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.moveTo svg {
+  font-size: 2rem !important;
+  color: #fff;
+  background: #ffb600;
+  padding: 5px;
+  border-radius: 3px;
+}
 
 @media only screen and (max-width: 480px) {
   .breakfastPetsContainer {
@@ -420,4 +436,3 @@
     /* padding: 1rem 0 0 4rem !important; */
   }
 }
-
